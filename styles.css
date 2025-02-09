@@ -113,4 +113,35 @@ input[type="password"]:focus {
     margin-top: 20px;
 }
 
-.foto-
+.foto-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.foto-container img {
+    margin: 10px;
+    max-width: 150px;
+    height: auto;
+    border: 2px solid #9e2a2f;
+    border-radius: 5px;
+}
+
+.delete-button {
+    display: block;
+    margin-top: 5px;
+    background-color: #9e2a2f;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.delete-button:hover {
+    background-color: #c8474f;
+}
+
+#mainContent {
+    margin-top: 20px;
+}
