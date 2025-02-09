@@ -3,20 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Herinneringen</title>
+    <title>Onze Liefdevolle Herinneringen ❤️</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    
+    <!-- Voeg Firebase SDK's toe als modules -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-analytics.js";
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
+      import { getStorage } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-storage.js";
+
+      // Firebase configuratie
+      const firebaseConfig = {
+        apiKey: "AIzaSyAmBFtPf11eu4tohfj17CMkG8FbsVl93O8",
+        authDomain: "mijnroodborststje.firebaseapp.com",
+        projectId: "mijnroodborststje",
+        storageBucket: "mijnroodborststje.firebasestorage.app",
+        messagingSenderId: "99812857188",
+        appId: "1:99812857188:web:f7b3dd2662dd70bca59671",
+        measurementId: "G-V1HHCF8Y93"
+      };
+
+      // Initialiseer Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const db = getFirestore(app);
+      const storage = getStorage(app);
+
+      // Zorg ervoor dat Firebase beschikbaar is voor je andere script
+      window.db = db;
+      window.storage = storage;
+    </script>
+
+    <!-- Voeg je script.js toe voor functionaliteit -->
+    <script defer type="module" src="script.js"></script>
 </head>
 <body>
+    <!-- Login pagina -->
+    <div id="login">
+        <h1>Welkom bij onze herinneringen ❤️</h1>
+        <p>Voer de geheime code in om toegang te krijgen:</p>
+        <input type="password" id="accessCode" placeholder="Voer code in...">
+        <button onclick="checkCode()">Toegang</button>
+    </div>
 
-    <h1>Welkom bij onze herinneringen</h1>
-    
-    <nav>
-        <button onclick="toonFotosVideos()">📸 Foto’s en Video’s</button>
-        <button onclick="toonDagboek()">📖 Dagboek</button>
-    </nav>
+    <!-- Hoofdinhoud na toegang -->
+    <div id="mainContent" style="display: none;">
+        <h1>Onze Liefdevolle Herinneringen ❤️</h1>
+        <nav>
+            <button onclick="toonFotosVideos()">📸 Foto’s en Video’s</button>
+            <button onclick="toonDagboek()">📖 Dagboek</button>
+        </nav>
 
-    <div id="content"></div>
+        <!-- Voeg knoppen toe voor het uploaden van foto’s -->
+        <button onclick="uploadFoto('Zomervakanties', 'Zomer 2023')">Upload Foto's Zomer 2023</button>
+        <button onclick="uploadFoto('Kerstvakanties', 'Kerst 2023')">Upload Foto's Kerst 2023</button>
+        <button onclick="uploadFoto('Op reis', 'Weekend Parijs')">Upload Foto's Weekend Parijs</button>
+        
+        <!-- Knop voor dagboek -->
+        <button onclick="opslaanDagboek()">Opslaan Dagboek</button>
 
+        <div id="content"></div>
+    </div>
 </body>
 </html>
