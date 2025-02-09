@@ -1,116 +1,48 @@
-/* Algemeen */
 body {
-    font-family: 'Courier New', Courier, monospace; /* Typemachine lettertype */
+    font-family: 'Courier New', Courier, monospace;
     text-align: center;
-    background-color: #f7f2f2; /* Lichte rode tint als achtergrond */
+    background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
-    color: #9e2a2f; /* Rood tinten voor de tekst */
+    color: #B22222; /* Rood kleur voor tekst */
 }
 
 h1 {
-    color: #9e2a2f; /* Dieprood voor de koppen */
+    color: #B22222; /* Rood kleur voor titel */
 }
 
 nav {
     margin: 20px 0;
 }
 
-/* Knoppen (hartvormig en rood) */
 button {
-    background-color: #9e2a2f;
+    background-color: #B22222; /* Donkerrood voor de knop */
     color: white;
     border: none;
-    padding: 20px 30px;
+    padding: 12px 30px;
     margin: 5px;
     cursor: pointer;
     font-size: 16px;
-    border-radius: 50%; /* Hartvormige knoppen */
-    position: relative;
+    border-radius: 50%; /* Maak knoppen rond voor hartvorm */
     width: 60px;
     height: 60px;
     display: inline-block;
-}
-
-button:before, button:after {
-    content: "";
-    position: absolute;
-    width: 30px;
-    height: 50px;
-    background-color: #9e2a2f;
-    border-radius: 50%;
-    top: 0;
-}
-
-button:before {
-    left: 0;
-}
-
-button:after {
-    right: 0;
+    text-align: center;
+    line-height: 60px;
 }
 
 button:hover {
-    background-color: #c8474f;
+    background-color: #8B0000; /* Donkerder rood bij hover */
 }
 
-button:disabled {
-    background-color: #b3d1ff;
-    cursor: not-allowed;
-}
-
-/* Algemene tekstvelden */
-textarea {
-    width: 80%;
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    background-color: #f4e6e6;
-    color: #9e2a2f;
-}
-
-textarea:focus {
-    outline: none;
-    border-color: #9e2a2f;
-}
-
-input[type="password"] {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    width: 60%;
-    background-color: #f4e6e6;
-    color: #9e2a2f;
-}
-
-input[type="password"]:focus {
-    outline: none;
-    border-color: #9e2a2f;
-}
-
-/* Stijlen voor de loginpagina */
-#login {
-    text-align: center;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    margin: 0 auto;
-    border: 2px solid #9e2a2f;
-}
-
-#login input, #login button {
-    width: 100%;
-    margin: 10px 0;
-}
-
-/* Foto-container */
 #content {
     margin-top: 20px;
+}
+
+img {
+    max-width: 200px;
+    margin: 10px;
+    display: block;
 }
 
 .foto-container {
@@ -123,25 +55,16 @@ input[type="password"]:focus {
     margin: 10px;
     max-width: 150px;
     height: auto;
-    border: 2px solid #9e2a2f;
+    border: 2px solid #ddd;
     border-radius: 5px;
 }
 
 .delete-button {
     display: block;
     margin-top: 5px;
-    background-color: #9e2a2f;
+    background-color: red;
     color: white;
     border: none;
     padding: 5px;
     cursor: pointer;
-    border-radius: 5px;
-}
-
-.delete-button:hover {
-    background-color: #c8474f;
-}
-
-#mainContent {
-    margin-top: 20px;
 }
