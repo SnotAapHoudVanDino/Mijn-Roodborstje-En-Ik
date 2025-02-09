@@ -1,8 +1,3 @@
-// Wacht totdat de pagina volledig geladen is
-document.addEventListener("DOMContentLoaded", function () {
-  alert("Welkom bij de herinneringen! ❤️");
-});
-
 // Functie om toegangscode te controleren
 function checkCode() {
   let code = document.getElementById("accessCode").value;
@@ -60,7 +55,9 @@ function toonFotos(categorie, event) {
 
 // Functie om foto's van Firebase op te halen
 function laadFotos(categorie, event) {
-  const fotosRef = storage.ref(`${categorie}/${event}`);
+  const storageRef = storage.ref();
+  const fotosRef = storageRef.child(`${categorie}/${event}`);
+
   fotosRef.listAll().then(result => {
     let html = '';
     result.items.forEach(fileRef => {
@@ -119,13 +116,4 @@ function opslaanDagboek() {
 }
 
 // Functie om het dagboek op te halen
-function laadDagboek() {
-  db.collection('dagboek').get().then(querySnapshot => {
-    let html = '';
-    querySnapshot.forEach(doc => {
-      const data = doc.data();
-      html += `<div><strong>${data.datum}</strong><p>${data.tekst}</p></div>`;
-    });
-    document.getElementById('dagboekEntries').innerHTML = html;
-  });
-}
+function
